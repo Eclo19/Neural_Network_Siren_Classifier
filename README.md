@@ -39,7 +39,7 @@ The `.wav` (audio) and `.json` (extracted acoustic features and saved NN + their
 
   To install Git LFS and pull large files:
 
-  1. Visit the [Git Docs](https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage) for a detailed explanation.
+  1. Visit the [GitHub Docs](https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage) for a detailed explanation.
   2. With Git LFS installed, run the following commands:
   
      ```bash
