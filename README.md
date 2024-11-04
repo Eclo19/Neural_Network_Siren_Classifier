@@ -8,6 +8,7 @@ This project creates an audio classifier for siren sounds: it classifies incomin
 
 I implemented several of the features proposed as problems in the book as well as some original ones to properly handle my data and manage when and how to save the network. I chose not to use standard deep learning libraries such as Pytorch or TensorFlow because I wanted to experience coding the network from scratch and controlling every step of the process.
 
+If you have any questions about this project or are interested in connecting please reach out to me! I have contact information in my profile. 
 
 If you would like to use this to practice training neural networks and hyperparameter tuning, run `test_train_NN()` in `test.py` with either the vanilla (standard) or the artificially expanded dataset. There is also room for experimentation inside the `expand_data()` and the `extract_acoustic_features()` functions in `siren_loader.py`. 
 
@@ -30,16 +31,28 @@ A significant part of this project involved creating algorithms for data augment
 
 #### Note on Large Files
 
-The audio (`.wav`) and configuration (`.json`) files in this repository are managed using **Git Large File Storage (LFS)**. This allows us to efficiently handle large files without bloating the repository's size.
+The `.wav` (audio) and `.json` (extracted acoustic features and saved NN + their test data) files in this repository are managed using **Git Large File Storage (LFS)**. This allows efficient handling of large files without bloating the repository's size.
 
-##### What This Means for You:
+##### **What This Means for You**:
 
 - **Cloning the Repository:** When you clone the repository, Git LFS will automatically download the large files. Ensure you have Git LFS installed on your machine.
+
+  To install Git LFS and pull large files:
+
+  1. Visit the [Git Docs](https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage) for a detailed explanation.
+  2. With Git LFS installed, run the following commands:
   
-  To install Git LFS:
-  ```bash
-  git lfs install
-  git lfs pull
+     ```bash
+     git lfs install
+     git clone <repository-url>
+     git lfs pull
+     ```
+
+- **Alternative Without Git LFS:**  
+  If you prefer not to install Git LFS:
+  
+  - You can run the `main.py` script, which will generate the necessary `.wav` and `.json` files if they are not found in the project directory. Ensure you have the vanilla data (`data` folder in this repository) or download the original dataset [here](https://www.kaggle.com/datasets/vishnu0399/emergency-vehicle-siren-sounds). Note that this raw data may cause errors in the code. To fix this, follow the instructions in this file and the docstring in `main.py`. You simply neet to run the `force_standard_size()` function in `main.py`, which will modify the files in place to ensure proper formatting. Running `main.py` will generate all the necessary files for this project and store them in the project directory using the `os` Python library.
+
 
 ## Workflow
 
