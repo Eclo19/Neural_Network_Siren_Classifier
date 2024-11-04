@@ -12,7 +12,7 @@ If you would like to use this to practice training neural networks and hyperpara
 
 **-- I achieved a maximum accuracy on data not seen during training of 96.67% --** 
 
-### **If you have any questions about this project or are interested in connecting please reach out to me! I have contact information in my profile.**
+### ** -- If you have any questions about this project or are interested in connecting please reach out to me! I have contact information in my profile. -- **
 
 ## Data
 
