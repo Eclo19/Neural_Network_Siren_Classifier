@@ -6,13 +6,13 @@ This repository contains a personal project that creates a Neural Networks for a
 
 This project creates an audio classifier for siren sounds: it classifies incoming data into one of the labels (types of siren sounds) it was trained to recognize. The code is not at all optimized, as it was based on Michael Nielsen's ([GitHub](https://github.com/mnielsen)) educationally-focused neural network implementations presented in his wonderful book "Neural Networks and Deep Learning" ([neuralnetworksanddeeplearning.com](http://neuralnetworksanddeeplearning.com/chap1.html)), where he introduces Neural Networks while tackling the MNIST dataset.
 
-I implemented several of the features proposed as problems in the book as well as some original ones to properly handle my data and manage when and how to save the network. I chose not to use standard deep learning libraries such as Pytorch or TensorFlow because I wanted to experience coding the network from scratch and controlling every step of the process.
-
-If you have any questions about this project or are interested in connecting please reach out to me! I have contact information in my profile. 
+I implemented several of the features proposed as problems in the book as well as some original ones to properly handle my data and manage when and how to save the network. I chose not to use standard deep learning libraries such as Pytorch or TensorFlow because I wanted to experience coding the network from scratch and controlling every step of the process. 
 
 If you would like to use this to practice training neural networks and hyperparameter tuning, run `test_train_NN()` in `test.py` with either the vanilla (standard) or the artificially expanded dataset. There is also room for experimentation inside the `expand_data()` and the `extract_acoustic_features()` functions in `siren_loader.py`. 
 
 **-- I achieved a maximum accuracy on data not seen during training of 96.67% --** 
+
+## **If you have any questions about this project or are interested in connecting please reach out to me! I have contact information in my profile.**
 
 ## Data
 
