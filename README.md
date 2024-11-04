@@ -28,6 +28,19 @@ The idea is to have a network that performs well in distinguishing regular traff
 
 A significant part of this project involved creating algorithms for data augmentation to artificially expand the dataset. This process is managed through functions and plugins I developed in `plugins.py`. These audio plugins apply transformations to generate slightly altered versions of the original sounds, thereby increasing the diversity of the training data.
 
+#### Note on Large Files
+
+The audio (`.wav`) and configuration (`.json`) files in this repository are managed using **Git Large File Storage (LFS)**. This allows us to efficiently handle large files without bloating the repository's size.
+
+##### What This Means for You:
+
+- **Cloning the Repository:** When you clone the repository, Git LFS will automatically download the large files. Ensure you have Git LFS installed on your machine.
+  
+  To install Git LFS:
+  ```bash
+  git lfs install
+  git lfs pull
+
 ## Workflow
 
 ### Ensuring The Data Is Uniform
