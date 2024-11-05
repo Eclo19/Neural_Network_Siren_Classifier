@@ -6,12 +6,13 @@ This repository contains a personal project that creates a Neural Networks for a
 
 This project creates an audio classifier for siren sounds: it classifies incoming data into one of the labels (types of siren sounds) it was trained to recognize. The code is not at all optimized, as it was based on Michael Nielsen's ([GitHub](https://github.com/mnielsen)) educationally-focused neural network implementations presented in his wonderful book "Neural Networks and Deep Learning" ([neuralnetworksanddeeplearning.com](http://neuralnetworksanddeeplearning.com/chap1.html)), where he introduces Neural Networks while tackling the MNIST dataset.
 
-I implemented several of the features proposed as problems in the book as well as some original ones to properly handle my data and manage when and how to save the network. I chose not to use standard deep learning libraries such as Pytorch or TensorFlow because I wanted to experience coding the network from scratch and controlling every step of the process.
-
+I implemented several of the features proposed as problems in the book as well as some original ones to properly handle my data and manage when and how to save the network. I chose not to use standard deep learning libraries such as Pytorch or TensorFlow because I wanted to experience coding the network from scratch and controlling every step of the process. 
 
 If you would like to use this to practice training neural networks and hyperparameter tuning, run `test_train_NN()` in `test.py` with either the vanilla (standard) or the artificially expanded dataset. There is also room for experimentation inside the `expand_data()` and the `extract_acoustic_features()` functions in `siren_loader.py`. 
 
 **-- I achieved a maximum accuracy on data not seen during training of 96.67% --** 
+
+### -- If you have any questions about this project or are interested in connecting please reach out to me! I have contact information in my profile. -- 
 
 ## Data
 
@@ -27,6 +28,31 @@ The idea is to have a network that performs well in distinguishing regular traff
 ### Data Augmentation
 
 A significant part of this project involved creating algorithms for data augmentation to artificially expand the dataset. This process is managed through functions and plugins I developed in `plugins.py`. These audio plugins apply transformations to generate slightly altered versions of the original sounds, thereby increasing the diversity of the training data.
+
+#### Note on Large Files
+
+The `.wav` (audio) and `.json` (extracted acoustic features and saved NN + their test data) files in this repository are managed using **Git Large File Storage (LFS)**. This allows efficient handling of large files without bloating the repository's size.
+
+##### **What This Means for You**:
+
+- **Cloning the Repository:** When you clone the repository, Git LFS will automatically download the large files. Ensure you have Git LFS installed on your machine.
+
+  To install Git LFS and pull large files:
+
+  1. Visit the [GitHub Docs](https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage) for a detailed explanation.
+  2. With Git LFS installed, run the following commands:
+  
+     ```bash
+     git lfs install
+     git clone <repository-url>
+     git lfs pull
+     ```
+
+- **Alternative Without Git LFS:**  
+  If you prefer not to install Git LFS:
+  
+  - You can run the `main.py` script, which will generate the necessary `.wav` and `.json` files if they are not found in the project directory. Ensure you have the vanilla data (`data` folder in this repository) or download the original dataset [here](https://www.kaggle.com/datasets/vishnu0399/emergency-vehicle-siren-sounds). Note that this raw data may cause errors in the code. To fix this, follow the instructions in this file and the docstring in `main.py`. You simply neet to run the `force_standard_size()` function in `main.py`, which will modify the files in place to ensure proper formatting. Running `main.py` will generate all the necessary files for this project and store them in the project directory using the `os` Python library.
+
 
 ## Workflow
 
