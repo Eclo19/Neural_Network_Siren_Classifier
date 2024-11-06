@@ -312,6 +312,8 @@ I would like to implement other training optimization techniques, such as Moment
 
 One of the ultimate goals is to deploy a well-trained network onto a microcontroller. This would allow the classifier to be integrated into a vehicle for real-world audio monitoring tasks. By testing the classifier in this context, I can gather valuable field data and refine the model further to meet practical requirements and constraints, such as real-time processing and limited computational resources.
 
+
+
 By addressing these areas in the future, I believe the classifier can be significantly improved and expanded to cover a wider range of applications. However, I am now focusing on studying more advanced Neural Network architectures, which, if applied in this context, will certainly outperform this dense layer-only-based implementation. 
 
 
