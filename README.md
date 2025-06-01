@@ -224,7 +224,7 @@ This script is responsible for preprocessing audio data used in the Siren Classi
    - Dynamically creates a new directory within the Siren Classifier project to store an expanded dataset, which can be beneficial for improving model performance through data augmentation.
 
 4. **`extract_acoustic_features()`**:
-   - Extracts relevant acoustic features from the audio files, such as spectral characteristics, and saves them as a list of tuples in the format (input, label) to a JSON file stored in a dynamically created directory. For MFCC ectraction, the function converts the data from `int16` to `float32` for compatibiloty with `librosa`. 
+   - Extracts relevant acoustic features from the audio files, such as spectral characteristics, and saves them as a list of tuples in the format (input, label) to a JSON file stored in a dynamically created directory. For MFCC ectraction, the function converts the data from `int16` to `float32` for compatibility with `librosa`. 
 
 5. **`load_acoustic_features()`**:
    - Provides functionality to load acoustic features from the JSON file, making it easier to reuse the processed data in various parts of the project.
@@ -241,7 +241,7 @@ To expand the audio dataset, I came up with simple plugin implementations that g
 
 1. A Dynamic Compressor: Compressors reduce the dynamic range on an audio file according to a threshold and a ratio. They operate based on two primary parameters: threshold and ratio. The threshold is the specified level at which compression starts acting, meaning any sample that exceeds this level will be affected. The ratio determines the degree of compression applied to signals that exceed the threshold, expressed as a ratio such as 2:1 or 4:1. For example, with a ratio of 2:1, if a signal reaches 10 dB above the threshold, only 5 dB will be allowed to pass through, effectively reducing the excess signal by half. Each audio file in the vanilla dataset has a compressed version created with light settings in the expanded dataset.
 
-2. A Shelfing Filter: Shelving Filters are a type of filter whose frequency response is shaped like a sigmoid function, allowing it to boost or cut frequencies above or below a specified cutoff frequency, depending on the gain settings. In my data expansion algorithm, I generated one high cut, one high boost, one low cut, and one low boost for every file in the vanilla dataset. Although the difference is sublte, there is an expressive change in the file. 
+2. A Shelving Filter: Shelving Filters are a type of filter whose frequency response is shaped like a sigmoid function, allowing it to boost or cut frequencies above or below a specified cutoff frequency, depending on the gain settings. In my data expansion algorithm, I generated one high cut, one high boost, one low cut, and one low boost for every file in the vanilla dataset. Although the difference is sublte, there is an expressive change in the file. 
 
 3. A Stereo To Mono Converter: This plugin simply turns stereo files into mono files. It has two modes: 'sum' and 'split'. When the mode is 'sum', the mono file is determined by summing the left and right channels. When the mode is 'split', the plugin generates two mono files corresponding to the left and right channels. In my expansion algorithm, I am generating sums of the channels in the artificially expanded dataset. 
 
